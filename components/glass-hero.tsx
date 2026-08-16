@@ -292,28 +292,30 @@ export default function GlassHero() {
       philosophyTimeline.to('.phi-glow-word', { filter: 'brightness(1.0)', color: '#93c5fd', textShadow: 'none', duration: 0.4 }, 1.4);
       philosophyTimeline.to('#interactive-orb-container', { scale: 2.4, filter: 'blur(8px)', duration: 1.2, ease: 'power2.inOut' }, 2.0);
       // SECTION 4: EDITORIAL PROJECTS SHOWCASE (individual reveals for mobile reliability)
-      gsap.fromTo('#sec-showcase-title', 
-        { opacity: 0, y: 40 }, 
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '#sec-showcase-title', start: 'top 85%', toggleActions: 'play none none reverse' } }
-      );
-
-      gsap.utils.toArray('.project-card-item').forEach((card) => {
-        gsap.fromTo(card,
-          { opacity: 0, y: 40, scale: 0.98 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
-            }
-          }
+      if (window.innerWidth >= 768) {
+        gsap.fromTo('#sec-showcase-title', 
+          { opacity: 0, y: 40 }, 
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '#sec-showcase-title', start: 'top 85%', toggleActions: 'play none none reverse' } }
         );
-      });
+
+        gsap.utils.toArray('.project-card-item').forEach((card) => {
+          gsap.fromTo(card,
+            { opacity: 0, y: 40, scale: 0.98 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.8,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        });
+      }
 
       // Parallax images
       gsap.utils.toArray('.project-image-parallax').forEach((img) => {
@@ -330,22 +332,24 @@ export default function GlassHero() {
       });
 
       // SECTION 5: SERVICES (individual reveals for mobile reliability)
-      gsap.utils.toArray('.service-card-item').forEach((card) => {
-        gsap.fromTo(card,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
+      if (window.innerWidth >= 768) {
+        gsap.utils.toArray('.service-card-item').forEach((card) => {
+          gsap.fromTo(card,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+              }
             }
-          }
-        );
-      });
+          );
+        });
+      }
 
 
       // SECTION 8 (Word Manifesto)
