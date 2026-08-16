@@ -331,9 +331,9 @@ export default function GlassHero() {
       });
       servicesTimeline.from('.service-card-item', {
         opacity: 0,
-        y: 50,
-        stagger: 0.12,
-        duration: 0.8,
+        y: 30,
+        stagger: 0.1,
+        duration: 0.6,
         ease: 'power2.out',
       });
 
@@ -1126,7 +1126,7 @@ export default function GlassHero() {
               <div
                 key={srv.num}
                 
-                className="service-card-item group bg-white border border-zinc-200/80 rounded-3xl p-8 md:p-10 flex flex-col justify-between gap-8 shadow-sm hover:shadow-2xl transition-all duration-500 will-change-transform relative overflow-hidden"
+                className="service-card-item group bg-white border border-zinc-200/80 hover:border-zinc-300 rounded-3xl p-8 md:p-10 flex flex-col justify-between gap-8 shadow-sm hover:shadow-lg hover:-translate-y-[6px] transition-all duration-500 will-change-transform relative overflow-hidden"
               >
                 {/* Sheen sweep overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
@@ -1138,8 +1138,9 @@ export default function GlassHero() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-light text-zinc-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-light text-zinc-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300 flex items-center gap-2">
                       {srv.title}
+                      <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-blue-600 text-2xl md:text-3xl">&rarr;</span>
                     </h3>
                     <p className="text-zinc-500 text-xs md:text-sm font-light leading-relaxed mt-3">
                       {srv.desc}
@@ -1151,7 +1152,7 @@ export default function GlassHero() {
                     <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Deliverables</span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
                       {srv.deliverables.map((item, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs font-light text-zinc-700">
+                        <div key={i} className="flex items-center gap-2 text-xs font-light text-zinc-700 group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
                           <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                           <span>{item}</span>
                         </div>
@@ -1164,16 +1165,18 @@ export default function GlassHero() {
                   {/* Tech stack badges */}
                   <div className="flex flex-wrap gap-1.5">
                     {srv.tech.map((t, i) => (
-                      <span key={i} className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-600 border border-zinc-200/80">
+                      <span key={i} className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-600 border border-zinc-200/80 hover:bg-zinc-200/80 hover:border-zinc-300 hover:-translate-y-[1px] transition-all duration-200 cursor-default">
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  <a href="#sec-cta-footer" className="inline-flex items-center gap-2 text-xs font-mono font-medium text-zinc-900 group-hover:text-blue-600 transition-colors pt-2">
-                    <span>Inquire for this service</span>
-                    <span className="group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
-                  </a>
+                  <MagneticButton className="w-fit">
+                    <a href="#sec-cta-footer" className="group/btn inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-900 hover:text-blue-600 transition-colors pt-2">
+                      <span>Inquire for this service</span>
+                      <span className="group-hover/btn:translate-x-[4px] transition-transform duration-300 ease-out">&rarr;</span>
+                    </a>
+                  </MagneticButton>
                 </div>
               </div>
             ))}
