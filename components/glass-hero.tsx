@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import dynamic from 'next/dynamic';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 
 
 const ENTRANCE_STYLES = `
@@ -299,12 +300,24 @@ export default function GlassHero() {
           toggleActions: 'play none none reverse',
         }
       });
-      projectsTimeline.from('.project-card-item', {
-        opacity: 0,
-        y: 50,
-        stagger: 0.12,
-        duration: 0.8,
-        ease: 'power2.out',
+      projectsTimeline.from('#sec-showcase-title', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out' }, 0);
+      projectsTimeline.from('.project-featured', { opacity: 0, y: 40, scale: 0.98, duration: 0.8, ease: 'power2.out' }, 0.2);
+      projectsTimeline.from('.project-group-2-card1', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out' }, 0.4);
+      projectsTimeline.from('.project-group-2-card2', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out' }, 0.55);
+      projectsTimeline.from('.project-group-3-card', { opacity: 0, y: 30, scale: 0.98, duration: 0.7, ease: 'power2.out', stagger: 0.12 }, 0.7);
+
+      // Parallax images
+      gsap.utils.toArray('.project-image-parallax').forEach((img) => {
+        gsap.to(img, {
+          yPercent: 15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: img.closest('.project-card-item'),
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
       });
 
       // SECTION 5: SERVICES (stagger reveal on scroll)
@@ -350,24 +363,7 @@ export default function GlassHero() {
 
 
 
-  // 3D Tilt & Parallax Physics for Project Cards
-  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -6;
-    const rotateY = ((x - centerX) / centerX) * 6;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-  };
-
-  const handleCardMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-  };
-
+  
   // Event handlers for Hero Mask Pointer
   const handlePointerEnter = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === 'mouse') {
@@ -772,9 +768,8 @@ export default function GlassHero() {
 
           {/* Project 01: Featured Horizontal Banner Card */}
           <div
-            onMouseMove={handleCardMouseMove}
-            onMouseLeave={handleCardMouseLeave}
-            className="project-card-item group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,85,255,0.12)] transition-all duration-500 will-change-transform relative"
+            
+            className="project-card-item project-featured group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)] hover:-translate-y-[6px] transition-all duration-500 will-change-transform relative"
           >
             {/* Light sheen sweep overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
@@ -796,13 +791,16 @@ export default function GlassHero() {
                   ))}
                 </div>
               </div>
-              <a href="https://nomoredms.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
+              <MagneticButton><a href="https://nomoredms.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
                 <span>View case study</span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-              </a>
+              </a></MagneticButton>
             </div>
             <div className="lg:col-span-7 bg-zinc-950 min-h-[320px] md:min-h-[420px] relative overflow-hidden flex items-center justify-center p-6 md:p-8">
-              <img src="/images/projects/nomoredms.png" alt="NoMoreDMS" className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
+                </div>
+              <img src="/images/projects/nomoredms.png" alt="NoMoreDMS" className="project-image-parallax w-full h-[120%] object-cover rounded-xl shadow-2xl group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
             </div>
           </div>
 
@@ -810,14 +808,16 @@ export default function GlassHero() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Project 02 */}
             <div
-              onMouseMove={handleCardMouseMove}
-              onMouseLeave={handleCardMouseLeave}
-              className="lg:col-span-7 project-card-item group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,85,255,0.12)] transition-all duration-500 will-change-transform relative"
+              
+              className="lg:col-span-7 project-card-item project-group-2-card1 group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)] hover:-translate-y-[6px] transition-all duration-500 will-change-transform relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
 
               <div className="bg-zinc-100 min-h-[280px] relative overflow-hidden p-6">
-                <img src="/images/projects/educalc.png" alt="EduCalc" className="w-full h-full object-cover rounded-xl shadow-lg group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
+                </div>
+                <img src="/images/projects/educalc.png" alt="EduCalc" className="project-image-parallax w-full h-[120%] object-cover rounded-xl shadow-lg group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               </div>
               <div className="p-8 flex flex-col justify-between gap-6 flex-1">
                 <div className="flex flex-col gap-3">
@@ -836,18 +836,17 @@ export default function GlassHero() {
                     ))}
                   </div>
                 </div>
-                <a href="https://educalc-expert0509.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
+                <MagneticButton><a href="https://educalc-expert0509.vercel.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
                   <span>View project</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-                </a>
+                </a></MagneticButton>
               </div>
             </div>
 
             {/* Project 03 */}
             <div
-              onMouseMove={handleCardMouseMove}
-              onMouseLeave={handleCardMouseLeave}
-              className="lg:col-span-5 project-card-item group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,85,255,0.12)] transition-all duration-500 will-change-transform relative"
+              
+              className="lg:col-span-5 project-card-item project-group-2-card2 group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)] hover:-translate-y-[6px] transition-all duration-500 will-change-transform relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
 
@@ -868,13 +867,16 @@ export default function GlassHero() {
                     ))}
                   </div>
                 </div>
-                <a href="https://devendhargopagoni.netlify.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
+                <MagneticButton><a href="https://devendhargopagoni.netlify.app/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-4 py-2 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
                   <span>View project</span>
                   <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-                </a>
+                </a></MagneticButton>
               </div>
               <div className="bg-zinc-900 min-h-[220px] relative overflow-hidden p-4">
-                <img src="/images/projects/personalportfolio.jpg" alt="Personal Portfolio" className="w-full h-full object-cover rounded-lg shadow-md group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
+                </div>
+                <img src="/images/projects/personalportfolio.jpg" alt="Personal Portfolio" className="project-image-parallax w-full h-[120%] object-cover rounded-lg shadow-md group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               </div>
             </div>
           </div>
@@ -888,14 +890,16 @@ export default function GlassHero() {
             ].map((p) => (
               <div
                 key={p.num}
-                onMouseMove={handleCardMouseMove}
-                onMouseLeave={handleCardMouseLeave}
-                className="project-card-item group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,85,255,0.12)] transition-all duration-500 will-change-transform relative"
+                
+                className="project-card-item project-group-3-card group bg-white border border-zinc-200/90 rounded-3xl overflow-hidden flex flex-col shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)] hover:-translate-y-[6px] transition-all duration-500 will-change-transform relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
 
                 <div className="h-48 bg-zinc-100 overflow-hidden relative">
-                  <img src={p.thumb} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
+                  <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
+                </div>
+                  <img src={p.thumb} alt={p.title} className="project-image-parallax w-full h-[120%] object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </div>
                 <div className="p-6 flex flex-col gap-4 flex-1 justify-between">
                   <div>
@@ -903,10 +907,10 @@ export default function GlassHero() {
                     <h4 className="text-xl font-semibold text-zinc-900 mt-2 group-hover:text-blue-600 transition-colors duration-300">{p.title}</h4>
                     <p className="text-zinc-600 text-xs font-light mt-1 leading-relaxed">{p.desc}</p>
                   </div>
-                  <a href={p.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-3.5 py-1.5 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
+                  <MagneticButton><a href={p.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-zinc-900 bg-zinc-100/90 group-hover:bg-blue-600 group-hover:text-white px-3.5 py-1.5 rounded-full border border-zinc-200/80 group-hover:border-blue-600 transition-all duration-300 w-fit shadow-2xs">
                     <span>View project</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
-                  </a>
+                  </a></MagneticButton>
                 </div>
               </div>
             ))}
@@ -1121,8 +1125,7 @@ export default function GlassHero() {
             ].map((srv) => (
               <div
                 key={srv.num}
-                onMouseMove={handleCardMouseMove}
-                onMouseLeave={handleCardMouseLeave}
+                
                 className="service-card-item group bg-white border border-zinc-200/80 rounded-3xl p-8 md:p-10 flex flex-col justify-between gap-8 shadow-sm hover:shadow-2xl transition-all duration-500 will-change-transform relative overflow-hidden"
               >
                 {/* Sheen sweep overlay */}
