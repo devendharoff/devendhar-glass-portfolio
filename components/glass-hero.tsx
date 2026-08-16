@@ -732,7 +732,7 @@ export default function GlassHero() {
       {/* 01 / THE APPROACH */}
       <section id="sec-approach" className="story-sec bg-[#f8f9fa] text-zinc-900 py-32 px-[max(5.6vw,2rem)] relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          <div className="flex items-center justify-between border-b border-zinc-200 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-zinc-200 pb-6 gap-4">
             <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-zinc-900 uppercase bg-zinc-200/90 px-3.5 py-1.5 rounded-full border border-zinc-300/80 shadow-2xs">01 / THE APPROACH</span>
             <span className="font-mono text-xs font-semibold text-zinc-700">Engineering Philosophy</span>
           </div>
@@ -757,7 +757,7 @@ export default function GlassHero() {
       {/* 02 / SELECTED WORK — ASYMMETRICAL EDITORIAL LAYOUT WITH 3D MOTION PHYSICS */}
       <section id="sec-showcase" className="story-sec bg-[#f8f9fa] text-zinc-900 py-24 px-[max(5.6vw,2rem)] relative z-20 border-t border-zinc-200/60">
         <div className="max-w-7xl mx-auto flex flex-col gap-16">
-          <div className="flex items-center justify-between w-full border-b border-zinc-200 pb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full border-b border-zinc-200 pb-6 gap-4">
             <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-zinc-900 uppercase bg-zinc-200/90 px-3.5 py-1.5 rounded-full border border-zinc-300/80 shadow-2xs">02 / SELECTED WORK</span>
             <span className="font-mono text-xs font-semibold text-zinc-700 hover:text-blue-600 transition-colors cursor-pointer">View all projects &rarr;</span>
           </div>
@@ -796,11 +796,13 @@ export default function GlassHero() {
                 <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
               </a></MagneticButton>
             </div>
-            <div className="lg:col-span-7 bg-zinc-950 min-h-[320px] md:min-h-[420px] relative overflow-hidden flex items-center justify-center p-6 md:p-8">
+            <div className="lg:col-span-7 bg-zinc-950 min-h-[320px] md:min-h-[420px] relative overflow-hidden">
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
                   <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
-                </div>
-              <img src="/images/projects/nomoredms.png" alt="NoMoreDMS" className="project-image-parallax w-full h-[120%] object-cover rounded-xl shadow-2xl group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              </div>
+              <div className="absolute inset-6 md:inset-8 overflow-hidden rounded-xl shadow-2xl z-10">
+                <img src="/images/projects/nomoredms.png" alt="NoMoreDMS" className="project-image-parallax w-full h-[130%] -mt-[15%] object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              </div>
             </div>
           </div>
 
@@ -813,11 +815,13 @@ export default function GlassHero() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
 
-              <div className="bg-zinc-100 min-h-[280px] relative overflow-hidden p-6">
+              <div className="bg-zinc-100 min-h-[280px] sm:min-h-[340px] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
                   <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
                 </div>
-                <img src="/images/projects/educalc.png" alt="EduCalc" className="project-image-parallax w-full h-[120%] object-cover rounded-xl shadow-lg group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <div className="absolute inset-6 overflow-hidden rounded-xl shadow-lg z-10">
+                  <img src="/images/projects/educalc.png" alt="EduCalc" className="project-image-parallax w-full h-[130%] -mt-[15%] object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                </div>
               </div>
               <div className="p-8 flex flex-col justify-between gap-6 flex-1">
                 <div className="flex flex-col gap-3">
@@ -872,11 +876,13 @@ export default function GlassHero() {
                   <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
                 </a></MagneticButton>
               </div>
-              <div className="bg-zinc-900 min-h-[220px] relative overflow-hidden p-4">
+              <div className="bg-zinc-900 min-h-[260px] sm:min-h-[300px] relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
                   <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
                 </div>
-                <img src="/images/projects/personalportfolio.jpg" alt="Personal Portfolio" className="project-image-parallax w-full h-[120%] object-cover rounded-lg shadow-md group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <div className="absolute inset-4 overflow-hidden rounded-lg shadow-md z-10">
+                  <img src="/images/projects/personalportfolio.jpg" alt="Personal Portfolio" className="project-image-parallax w-full h-[130%] -mt-[15%] object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                </div>
               </div>
             </div>
           </div>
@@ -895,11 +901,11 @@ export default function GlassHero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none z-10" />
 
-                <div className="h-48 bg-zinc-100 overflow-hidden relative">
+                <div className="h-56 sm:h-64 md:h-48 lg:h-56 bg-zinc-100 overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center backdrop-blur-[2px]">
-                  <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
-                </div>
-                  <img src={p.thumb} alt={p.title} className="project-image-parallax w-full h-[120%] object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                    <span className="font-mono text-xs font-semibold tracking-wider text-white bg-black/40 px-4 py-2 rounded-full border border-white/20 transform scale-90 group-hover:scale-100 transition-transform duration-500">VIEW PROJECT &rarr;</span>
+                  </div>
+                  <img src={p.thumb} alt={p.title} className="project-image-parallax absolute w-full h-[130%] -top-[15%] left-0 object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-10" />
                 </div>
                 <div className="p-6 flex flex-col gap-4 flex-1 justify-between">
                   <div>
