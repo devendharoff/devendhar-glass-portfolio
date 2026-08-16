@@ -291,20 +291,29 @@ export default function GlassHero() {
       philosophyTimeline.to('.phi-glow-word', { filter: 'brightness(1.5)', color: '#60a5fa', textShadow: '0 0 20px rgba(96,165,250,0.5)', duration: 0.4 }, 1.0);
       philosophyTimeline.to('.phi-glow-word', { filter: 'brightness(1.0)', color: '#93c5fd', textShadow: 'none', duration: 0.4 }, 1.4);
       philosophyTimeline.to('#interactive-orb-container', { scale: 2.4, filter: 'blur(8px)', duration: 1.2, ease: 'power2.inOut' }, 2.0);
-      // SECTION 4: EDITORIAL PROJECTS SHOWCASE (stagger reveal on scroll)
-      const projectsTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#sec-showcase',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-        }
+      // SECTION 4: EDITORIAL PROJECTS SHOWCASE (individual reveals for mobile reliability)
+      gsap.fromTo('#sec-showcase-title', 
+        { opacity: 0, y: 40 }, 
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '#sec-showcase-title', start: 'top 85%', toggleActions: 'play none none reverse' } }
+      );
+
+      gsap.utils.toArray('.project-card-item').forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 40, scale: 0.98 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
       });
-      projectsTimeline.from('#sec-showcase-title', { opacity: 0, y: 40, duration: 0.8, ease: 'power2.out' }, 0);
-      projectsTimeline.from('.project-featured', { opacity: 0, y: 40, scale: 0.98, duration: 0.8, ease: 'power2.out' }, 0.2);
-      projectsTimeline.from('.project-group-2-card1', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out' }, 0.4);
-      projectsTimeline.from('.project-group-2-card2', { opacity: 0, y: 30, duration: 0.7, ease: 'power2.out' }, 0.55);
-      projectsTimeline.from('.project-group-3-card', { opacity: 0, y: 30, scale: 0.98, duration: 0.7, ease: 'power2.out', stagger: 0.12 }, 0.7);
 
       // Parallax images
       gsap.utils.toArray('.project-image-parallax').forEach((img) => {
@@ -320,21 +329,22 @@ export default function GlassHero() {
         });
       });
 
-      // SECTION 5: SERVICES (stagger reveal on scroll)
-      const servicesTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#sec-services',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-        }
-      });
-      servicesTimeline.from('.service-card-item', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.1,
-        duration: 0.6,
-        ease: 'power2.out',
+      // SECTION 5: SERVICES (individual reveals for mobile reliability)
+      gsap.utils.toArray('.service-card-item').forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
       });
 
 
