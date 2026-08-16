@@ -631,11 +631,11 @@ export default function GlassHero() {
         {/* Layer 4: Headline and copy */}
         <div className="absolute inset-0 flex flex-col justify-between p-[max(2.5rem,safe-area-top)_max(5.6vw,2rem)_8vh] pointer-events-none">
           
-          {/* Heading (approx 34% from top on desktop) */}
-          <div className="flex flex-col items-start mt-[34vh] pl-[max(5.6vw,2rem)]">
+          {/* Heading */}
+          <div className="flex flex-col items-start mt-[26vh] sm:mt-[30vh] md:mt-[34vh] px-[max(4vw,1rem)] sm:px-[max(5.6vw,2rem)]">
             <h1 
-              className="text-[#0c111d] font-light tracking-[-0.085em] select-none text-[clamp(3.5rem,6.2vw,6.8rem)] md:text-[clamp(5.4rem,6.2vw,6.8rem)]"
-              style={{ lineHeight: 0.93 }}
+              className="text-[#0c111d] font-light tracking-[-0.085em] select-none text-[clamp(2.8rem,10vw,6.8rem)] md:text-[clamp(5.4rem,6.2vw,6.8rem)]"
+              style={{ lineHeight: 0.95 }}
             >
               <span className="block opacity-0 animate-line-up [animation-delay:300ms]">Building</span>
               <span className="block opacity-0 animate-line-up [animation-delay:450ms]">Beyond</span>
@@ -644,15 +644,15 @@ export default function GlassHero() {
           </div>
 
           {/* Bottom layout row */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 w-full mt-auto px-[max(5.6vw,2rem)]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 w-full mt-auto px-[max(4vw,1rem)] sm:px-[max(5.6vw,2rem)] pb-4 sm:pb-8">
             {/* Bottom left copy & explore button */}
-            <div className="flex flex-col items-start gap-6 max-w-[480px] animate-fade-up opacity-0 [animation-delay:750ms]">
-              <p className="text-gray-600 text-[1.05rem] leading-relaxed font-light select-none">
+            <div className="flex flex-col items-start gap-5 sm:gap-6 max-w-[480px] animate-fade-up opacity-0 [animation-delay:750ms]">
+              <p className="text-gray-600 text-sm sm:text-[1.05rem] leading-relaxed font-light select-none">
                 I specialize in designing and developing premium websites, SaaS platforms, AI-powered applications, dashboards, and modern digital experiences.
               </p>
               <a 
                 href="#sec-showcase" 
-                className="pointer-events-auto flex items-center justify-center bg-[#0c111d] hover:bg-black text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none min-h-[44px]"
+                className="pointer-events-auto flex items-center justify-center bg-[#0c111d] hover:bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none min-h-[40px] sm:min-h-[44px]"
               >
                 Explore my work
               </a>
@@ -937,58 +937,58 @@ export default function GlassHero() {
       </section>
 
       {/* 03 / TECH STACK & ECOSYSTEM — EXACT REFERENCE MATCH LAYOUT */}
-      <section id="sec-skills" className="story-sec bg-[#f8f9fa] text-zinc-900 py-24 px-[max(5.6vw,2rem)] relative z-20 border-t border-zinc-200">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16">
+      <section id="sec-skills" className="story-sec bg-[#f8f9fa] text-zinc-900 py-16 sm:py-24 px-[max(4vw,1.25rem)] sm:px-[max(5.6vw,2rem)] relative z-20 border-t border-zinc-200">
+        <div className="max-w-7xl mx-auto flex flex-col gap-10 sm:gap-16">
           <div className="flex items-center justify-between border-b border-zinc-200 pb-6">
-            <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-zinc-900 uppercase bg-zinc-200/90 px-3.5 py-1.5 rounded-full border border-zinc-300/80 shadow-2xs">03 / TECH STACK & ECOSYSTEM</span>
-            <span className="font-mono text-xs font-semibold text-zinc-700">Core Technologies</span>
+            <span className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-zinc-900 uppercase bg-zinc-200/90 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full border border-zinc-300/80 shadow-2xs">03 / TECH STACK & ECOSYSTEM</span>
+            <span className="font-mono text-[11px] sm:text-xs font-semibold text-zinc-700">Core Technologies</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Floating Tech Icons & Interactive Illustration Box */}
-            <div className="lg:col-span-6 relative min-h-[480px] flex items-center justify-center p-8 bg-white border border-zinc-200/80 rounded-3xl shadow-sm overflow-hidden">
+            <div className="lg:col-span-6 relative min-h-[380px] sm:min-h-[480px] flex items-center justify-center p-4 sm:p-8 bg-white border border-zinc-200/80 rounded-3xl shadow-sm overflow-hidden">
               {/* Grid Background Pattern */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
               {/* Floating Node.js Icon */}
-              <div className="absolute top-6 left-6 animate-[float_6s_ease-in-out_infinite] z-10 flex items-center gap-2.5 bg-white/95 backdrop-blur border border-zinc-200/90 px-4 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">Node.js</span>
+              <div className="absolute top-4 sm:top-6 left-3 sm:left-6 animate-[float_6s_ease-in-out_infinite] z-10 flex items-center gap-2 sm:gap-2.5 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Node.js</span>
               </div>
 
               {/* Floating HTML5 Icon */}
-              <div className="absolute top-16 right-6 animate-[float_7s_ease-in-out_infinite_1s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-3.5 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">HTML5</span>
+              <div className="absolute top-12 sm:top-16 right-3 sm:right-6 animate-[float_7s_ease-in-out_infinite_1s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">HTML5</span>
               </div>
 
               {/* Floating Google Cloud Icon */}
-              <div className="absolute top-8 left-1/3 animate-[float_5s_ease-in-out_infinite_0.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-3.5 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://images.shadcnspace.com/assets/svgs/gemini.svg" alt="Google Cloud" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">Google Cloud</span>
+              <div className="absolute top-4 sm:top-8 left-1/3 animate-[float_5s_ease-in-out_infinite_0.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://images.shadcnspace.com/assets/svgs/gemini.svg" alt="Google Cloud" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Google Cloud</span>
               </div>
 
               {/* Floating React Icon */}
-              <div className="absolute bottom-20 right-8 animate-[float_6s_ease-in-out_infinite_1.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-4 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">React</span>
+              <div className="absolute bottom-16 sm:bottom-20 right-3 sm:right-8 animate-[float_6s_ease-in-out_infinite_1.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">React</span>
               </div>
 
               {/* Floating Supabase Icon */}
-              <div className="absolute bottom-32 left-6 animate-[float_8s_ease-in-out_infinite_0.8s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-3.5 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://images.shadcnspace.com/assets/svgs/supabase.svg" alt="Supabase" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">Supabase</span>
+              <div className="absolute bottom-24 sm:bottom-32 left-3 sm:left-6 animate-[float_8s_ease-in-out_infinite_0.8s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://images.shadcnspace.com/assets/svgs/supabase.svg" alt="Supabase" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Supabase</span>
               </div>
 
               {/* Floating TypeScript Icon */}
-              <div className="absolute top-44 right-4 animate-[float_6.5s_ease-in-out_infinite_0.3s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-3.5 py-2 rounded-2xl shadow-md hover:scale-105 transition-transform">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-7 h-7" />
-                <span className="font-mono text-xs font-semibold text-zinc-800">TypeScript</span>
+              <div className="absolute top-36 sm:top-44 right-2 sm:right-4 animate-[float_6.5s_ease-in-out_infinite_0.3s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">TypeScript</span>
               </div>
 
               {/* Center Transparent Developer Illustration */}
               <div className="relative z-0 flex flex-col items-center justify-center pt-8 pb-4">
-                <div className="w-64 md:w-72 max-h-[340px] flex items-center justify-center relative">
+                <div className="w-48 sm:w-64 md:w-72 max-h-[280px] sm:max-h-[340px] flex items-center justify-center relative">
                   <img
                     src="/images/tech-developer-illustration-transparent.png"
                     alt="Devender Gopagoni - Full-Stack Developer Illustration"
@@ -996,8 +996,8 @@ export default function GlassHero() {
                   />
                 </div>
                 <div className="mt-4 flex flex-col items-center text-center">
-                  <span className="font-mono text-sm font-semibold text-zinc-900">Devender Gopagoni</span>
-                  <span className="text-zinc-500 font-sans text-xs font-light">Full-Stack Tech Architecture</span>
+                  <span className="font-mono text-xs sm:text-sm font-semibold text-zinc-900">Devender Gopagoni</span>
+                  <span className="text-zinc-500 font-sans text-[11px] sm:text-xs font-light">Full-Stack Tech Architecture</span>
                 </div>
               </div>
             </div>
