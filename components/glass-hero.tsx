@@ -6,19 +6,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import dynamic from 'next/dynamic';
 
-const ParticleSphereRefactor = dynamic(
-  () => import('@/components/ui/particle-sphere'),
-  { ssr: false }
-);
-const OrbitingSkills = dynamic(
-  () => import('@/components/ui/orbiting-skills'),
-  { ssr: false }
-);
-const ArgentLoopSlider = dynamic(
-  () => import('@/components/ui/argent-loop-infinite-slider'),
-  { ssr: false }
-);
-
 
 const ENTRANCE_STYLES = `
 @keyframes heroFadeIn {
@@ -432,16 +419,7 @@ export default function GlassHero() {
     idPortraitMouseY.current = 0;
   };
 
-  // Section 3 Interactive Glass Orb pointer handlers
-  const handleSec3MouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    orbMouseX.current = e.clientX - window.innerWidth / 2;
-    orbMouseY.current = e.clientY - window.innerHeight / 2;
-  };
 
-  const handleSec3MouseLeave = () => {
-    orbMouseX.current = 0;
-    orbMouseY.current = 0;
-  };
 
 
 

@@ -178,8 +178,6 @@ export default function Smooth3DSlideshow({
     [step]
   )
 
-  const activeProject = list[active] || list[0]
-
   return (
     <div
       style={{
