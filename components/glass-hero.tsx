@@ -669,7 +669,7 @@ export default function GlassHero() {
               id="identity-portrait" 
               className="relative w-[85%] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/5 bg-cover bg-center bg-no-repeat grayscale z-10 transition-transform duration-100 ease-out"
               style={{
-                backgroundImage: 'url("/images/Base_image_desktop.png")',
+                backgroundImage: 'url("/images/about-portrait.jpg")',
                 animation: 'idFloatBreathing 10s ease-in-out infinite',
               }}
             />
