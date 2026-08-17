@@ -1277,7 +1277,7 @@ export default function GlassHero() {
                     { name: 'AI Chatbots', icon: 'https://api.iconify.design/logos:google-gemini.svg' },
                     { name: 'WhatsApp Automation', icon: 'https://api.iconify.design/logos:whatsapp-icon.svg' },
                     { name: 'AI Agents', icon: 'https://api.iconify.design/logos:claude-icon.svg' },
-                    { name: 'AI Workflow Automation', icon: 'https://api.iconify.design/logos:make.svg' },
+                    { name: 'AI Workflow Automation', icon: 'https://api.iconify.design/simple-icons:make.svg' },
                     { name: 'CRM Automation', icon: 'https://api.iconify.design/logos:hubspot.svg' },
                   ]
                 },

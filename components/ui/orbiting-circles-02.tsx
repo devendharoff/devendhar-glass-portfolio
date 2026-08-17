@@ -10,7 +10,7 @@ const orbits = [
     icons: [
       { src: "https://api.iconify.design/logos:supabase-icon.svg", alt: "Supabase", angle: -60 },
       { src: "https://api.iconify.design/logos:google-gemini.svg", alt: "Gemini", angle: 0 },
-      { src: "https://api.iconify.design/logos:make.svg", alt: "Make", angle: 60 },
+      { src: "https://api.iconify.design/simple-icons:make.svg", alt: "Make", angle: 60 },
     ],
   },
   {
