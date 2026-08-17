@@ -8,26 +8,26 @@ const orbits = [
     size: "w-[260px] h-[260px] md:w-[440px] md:h-[440px]",
     duration: 18,
     icons: [
-      { src: "https://images.shadcnspace.com/assets/svgs/supabase.svg", alt: "Supabase", angle: -60 },
-      { src: "https://images.shadcnspace.com/assets/svgs/gemini.svg", alt: "gemini", angle: 0 },
-      { src: "https://images.shadcnspace.com/assets/svgs/make.svg", alt: "Make", angle: 60 },
+      { src: "https://api.iconify.design/logos:supabase-icon.svg", alt: "Supabase", angle: -60 },
+      { src: "https://api.iconify.design/logos:google-gemini.svg", alt: "Gemini", angle: 0 },
+      { src: "https://api.iconify.design/logos:make.svg", alt: "Make", angle: 60 },
     ],
   },
   {
     size: "w-[360px] h-[360px] md:w-[560px] md:h-[560px]",
     duration: 24,
     icons: [
-      { src: "https://images.shadcnspace.com/assets/svgs/figma.svg", alt: "Figma", angle: 0 },
-      { src: "https://images.shadcnspace.com/assets/svgs/slack.svg", alt: "Slack", angle: -90 },
+      { src: "https://api.iconify.design/logos:figma.svg", alt: "Figma", angle: 0 },
+      { src: "https://api.iconify.design/logos:slack-icon.svg", alt: "Slack", angle: -90 },
     ],
   },
   {
     size: "w-[460px] h-[460px] md:w-[680px] md:h-[680px]",
     duration: 30,
     icons: [
-      { src: "https://images.shadcnspace.com/assets/svgs/clude.svg", alt: "Claude", angle: -60 },
-      { src: "https://images.shadcnspace.com/assets/svgs/react.svg", alt: "react", angle: 0 },
-      { src: "https://images.shadcnspace.com/assets/svgs/python.svg", alt: "python", angle: 60 },
+      { src: "https://api.iconify.design/logos:claude-icon.svg", alt: "Claude", angle: -60 },
+      { src: "https://api.iconify.design/logos:react.svg", alt: "React", angle: 0 },
+      { src: "https://api.iconify.design/logos:python.svg", alt: "Python", angle: 60 },
     ],
   },
 ];

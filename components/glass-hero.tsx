@@ -1188,37 +1188,37 @@ export default function GlassHero() {
 
               {/* Floating Node.js Icon */}
               <div className="absolute top-4 sm:top-6 left-3 sm:left-6 animate-[float_6s_ease-in-out_infinite] z-10 flex items-center gap-2 sm:gap-2.5 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:nodejs-icon.svg" alt="Node.js" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Node.js</span>
               </div>
 
               {/* Floating HTML5 Icon */}
               <div className="absolute top-12 sm:top-16 right-3 sm:right-6 animate-[float_7s_ease-in-out_infinite_1s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:html-5.svg" alt="HTML5" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">HTML5</span>
               </div>
 
               {/* Floating Google Cloud Icon */}
               <div className="absolute top-4 sm:top-8 left-1/3 animate-[float_5s_ease-in-out_infinite_0.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://images.shadcnspace.com/assets/svgs/gemini.svg" alt="Google Cloud" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:google-cloud.svg" alt="Google Cloud" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Google Cloud</span>
               </div>
 
               {/* Floating React Icon */}
               <div className="absolute bottom-16 sm:bottom-20 right-3 sm:right-8 animate-[float_6s_ease-in-out_infinite_1.5s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:react.svg" alt="React" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">React</span>
               </div>
 
               {/* Floating Supabase Icon */}
               <div className="absolute bottom-24 sm:bottom-32 left-3 sm:left-6 animate-[float_8s_ease-in-out_infinite_0.8s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://images.shadcnspace.com/assets/svgs/supabase.svg" alt="Supabase" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:supabase-icon.svg" alt="Supabase" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">Supabase</span>
               </div>
 
               {/* Floating TypeScript Icon */}
               <div className="absolute top-36 sm:top-44 right-2 sm:right-4 animate-[float_6.5s_ease-in-out_infinite_0.3s] z-10 flex items-center gap-2 bg-white/95 backdrop-blur border border-zinc-200/90 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl shadow-md hover:scale-105 transition-transform scale-90 sm:scale-100">
-                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-5 h-5 sm:w-7 sm:h-7" />
+                <img src="https://api.iconify.design/logos:typescript-icon.svg" alt="TypeScript" className="w-5 h-5 sm:w-7 sm:h-7" />
                 <span className="font-mono text-[10px] sm:text-xs font-semibold text-zinc-800">TypeScript</span>
               </div>
 
@@ -1244,53 +1244,53 @@ export default function GlassHero() {
                 {
                   title: 'Frontend',
                   skills: [
-                    { name: 'React.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
-                    { name: 'Next.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg' },
-                    { name: 'TypeScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg' },
-                    { name: 'JavaScript (ES6+)', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
-                    { name: 'HTML5', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg' },
-                    { name: 'CSS3', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg' },
-                    { name: 'Tailwind CSS', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg' },
+                    { name: 'React.js', icon: 'https://api.iconify.design/logos:react.svg' },
+                    { name: 'Next.js', icon: 'https://api.iconify.design/logos:nextjs-icon.svg' },
+                    { name: 'TypeScript', icon: 'https://api.iconify.design/logos:typescript-icon.svg' },
+                    { name: 'JavaScript (ES6+)', icon: 'https://api.iconify.design/logos:javascript.svg' },
+                    { name: 'HTML5', icon: 'https://api.iconify.design/logos:html-5.svg' },
+                    { name: 'CSS3', icon: 'https://api.iconify.design/logos:css-3.svg' },
+                    { name: 'Tailwind CSS', icon: 'https://api.iconify.design/logos:tailwindcss-icon.svg' },
                   ]
                 },
                 {
                   title: 'Backend',
                   skills: [
-                    { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
-                    { name: 'Express.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg' },
-                    { name: 'REST APIs', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg' },
-                    { name: 'Supabase', icon: 'https://images.shadcnspace.com/assets/svgs/supabase.svg' },
-                    { name: 'PostgreSQL', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg' },
+                    { name: 'Node.js', icon: 'https://api.iconify.design/logos:nodejs-icon.svg' },
+                    { name: 'Express.js', icon: 'https://api.iconify.design/logos:express.svg' },
+                    { name: 'REST APIs', icon: 'https://api.iconify.design/logos:postman-icon.svg' },
+                    { name: 'Supabase', icon: 'https://api.iconify.design/logos:supabase-icon.svg' },
+                    { name: 'PostgreSQL', icon: 'https://api.iconify.design/logos:postgresql.svg' },
                   ]
                 },
                 {
                   title: 'CMS & Platforms',
                   skills: [
-                    { name: 'WordPress', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg' },
-                    { name: 'Shopify', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/shopify/shopify-original.svg' },
+                    { name: 'WordPress', icon: 'https://api.iconify.design/logos:wordpress-icon.svg' },
+                    { name: 'Shopify', icon: 'https://api.iconify.design/logos:shopify.svg' },
                   ]
                 },
                 {
                   title: 'AI & Automation',
                   skills: [
-                    { name: 'OpenAI Integration', icon: 'https://images.shadcnspace.com/assets/svgs/gemini.svg' },
-                    { name: 'AI Chatbots', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
-                    { name: 'WhatsApp Automation', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg' },
-                    { name: 'AI Agents', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg' },
-                    { name: 'AI Workflow Automation', icon: 'https://images.shadcnspace.com/assets/svgs/supabase.svg' },
-                    { name: 'CRM Automation', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg' },
+                    { name: 'OpenAI Integration', icon: 'https://api.iconify.design/logos:openai-icon.svg' },
+                    { name: 'AI Chatbots', icon: 'https://api.iconify.design/logos:google-gemini.svg' },
+                    { name: 'WhatsApp Automation', icon: 'https://api.iconify.design/logos:whatsapp-icon.svg' },
+                    { name: 'AI Agents', icon: 'https://api.iconify.design/logos:claude-icon.svg' },
+                    { name: 'AI Workflow Automation', icon: 'https://api.iconify.design/logos:make.svg' },
+                    { name: 'CRM Automation', icon: 'https://api.iconify.design/logos:hubspot.svg' },
                   ]
                 },
                 {
                   title: 'Capabilities & Deployment',
                   skills: [
-                    { name: 'Responsive UI/UX', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg' },
-                    { name: 'SEO Optimization', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg' },
-                    { name: 'Performance Optimization', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg' },
-                    { name: 'Authentication Systems', icon: 'https://images.shadcnspace.com/assets/svgs/supabase.svg' },
-                    { name: 'Dashboard Development', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg' },
-                    { name: 'API Integrations', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original.svg' },
-                    { name: 'Deployment & Hosting', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/netlify/netlify-original.svg' },
+                    { name: 'Responsive UI/UX', icon: 'https://api.iconify.design/logos:figma.svg' },
+                    { name: 'SEO Optimization', icon: 'https://api.iconify.design/logos:google-icon.svg' },
+                    { name: 'Performance Optimization', icon: 'https://api.iconify.design/logos:lighthouse.svg' },
+                    { name: 'Authentication Systems', icon: 'https://api.iconify.design/logos:auth0-icon.svg' },
+                    { name: 'Dashboard Development', icon: 'https://api.iconify.design/logos:react.svg' },
+                    { name: 'API Integrations', icon: 'https://api.iconify.design/logos:postman-icon.svg' },
+                    { name: 'Deployment & Hosting', icon: 'https://api.iconify.design/logos:netlify-icon.svg' },
                   ]
                 },
               ].map((item, idx) => (
